@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Seekerothers" table="seekerothers" catalog="jobfinal" optimistic-lock="version">
+        <id name="otherId" type="java.lang.Integer">
+            <column name="otherId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobseekerreg" class="info.diit.entity.Jobseekerreg" fetch="select">
+            <column name="userId" />
+        </many-to-one>
+        <property name="preferArea" type="string">
+            <column name="preferArea" length="400" />
+        </property>
+        <property name="prSalary" type="string">
+            <column name="prSalary" length="11" />
+        </property>
+        <property name="exSalary" type="string">
+            <column name="exSalary" length="11" />
+        </property>
+    </class>
+</hibernate-mapping>

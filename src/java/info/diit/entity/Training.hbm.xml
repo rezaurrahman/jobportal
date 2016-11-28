@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Training" table="training" catalog="jobfinal" optimistic-lock="version">
+        <id name="trainingId" type="java.lang.Integer">
+            <column name="trainingID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobseekerreg" class="info.diit.entity.Jobseekerreg" fetch="select">
+            <column name="userId" />
+        </many-to-one>
+        <property name="trainingTitle" type="string">
+            <column name="trainingTitle" />
+        </property>
+        <property name="topic" type="string">
+            <column name="topic" length="500" />
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" length="50" />
+        </property>
+        <property name="institute" type="string">
+            <column name="institute" />
+        </property>
+        <property name="location" type="string">
+            <column name="location" />
+        </property>
+        <property name="trainingYear" type="string">
+            <column name="trainingYear" length="50" />
+        </property>
+        <property name="trainingTitle2" type="string">
+            <column name="trainingTitle2" />
+        </property>
+        <property name="topic2" type="string">
+            <column name="topic2" length="500" />
+        </property>
+        <property name="duration2" type="string">
+            <column name="duration2" length="50" />
+        </property>
+        <property name="institute2" type="string">
+            <column name="institute2" />
+        </property>
+        <property name="location2" type="string">
+            <column name="location2" />
+        </property>
+        <property name="trainingYear2" type="string">
+            <column name="trainingYear2" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

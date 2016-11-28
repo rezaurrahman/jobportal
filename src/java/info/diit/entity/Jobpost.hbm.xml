@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Jobpost" table="jobpost" catalog="jobfinal" optimistic-lock="version">
+        <id name="jobId" type="java.lang.Integer">
+            <column name="jobID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="companycategory" class="info.diit.entity.Companycategory" fetch="select">
+            <column name="employerType" />
+        </many-to-one>
+        <many-to-one name="jobcategory" class="info.diit.entity.Jobcategory" fetch="select">
+            <column name="jobCat" />
+        </many-to-one>
+        <property name="jobTitle" type="string">
+            <column name="jobTitle" />
+        </property>
+        <property name="jobRequ" type="string">
+            <column name="jobRequ" length="555" />
+        </property>
+        <property name="noOfPost" type="string">
+            <column name="noOfPost" />
+        </property>
+        <property name="poatDate" type="string">
+            <column name="poatDate" length="45" />
+        </property>
+        <property name="expDate" type="string">
+            <column name="expDate" length="45" />
+        </property>
+        <property name="deadline" type="string">
+            <column name="deadline" />
+        </property>
+        <property name="jobNature" type="string">
+            <column name="jobNature" />
+        </property>
+        <property name="jobDesc" type="string">
+            <column name="jobDesc" />
+        </property>
+        <property name="workingPlace" type="string">
+            <column name="workingPlace" />
+        </property>
+        <property name="salary" type="string">
+            <column name="salary" />
+        </property>
+        <property name="requireExperience" type="string">
+            <column name="requireExperience" />
+        </property>
+        <property name="educationReqr" type="string">
+            <column name="educationReqr" />
+        </property>
+        <property name="workingHours" type="string">
+            <column name="workingHours" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="employerName" type="string">
+            <column name="employerName" />
+        </property>
+    </class>
+</hibernate-mapping>

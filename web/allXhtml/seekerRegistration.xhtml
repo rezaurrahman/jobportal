@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>jobbangla.com</title>
+
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="resources/css/profiledashboard.css"></link>
+        <link rel="stylesheet" href="resources/css/fileinput.css"></link>
+        <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/fileupload.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"></link>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+
+
+    </h:head>
+    <h:body>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Option <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Update Profile</a></li>
+                                    <li><a href="#">Account Setting</a></li>
+                                    <li><a href="#">View Resume</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Close Account</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <li> <a href="#"><i class="glyphicon glyphicon-off"/> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row">
+            <div class="col-md-2" id="sss">
+
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#"><i class="glyphicon glyphicon-home"></i> View Resume </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-user"></i> Account Settings </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><i class="glyphicon glyphicon-ok"></i> Change Password </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-flag"></i> Help </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-10">
+                <div class="rightside">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-success">
+                        </div>
+                    </div>
+                    <div class="tabbable" id="tabs-1">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#panel1" data-toggle="tab">Personal Information</a>
+
+                            </li>
+                            <li>
+                                <a href="#panel-729758" data-toggle="tab">Education</a>
+
+                            </li>
+                            <li>
+                                <a href="#panel-3" data-toggle="tab">Experiences</a>
+
+                            </li>
+                            <li>
+                                <a href="#panel-4" data-toggle="tab">References</a>
+
+                            </li>
+                            <li>
+                                <a href="#panel-5" data-toggle="tab">Photo</a>
+
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="panel1">
+                                <h:form class="form-horizontal">
+                                    <p:messages id="msg" closable="true" showDetail="false"/>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">First Name</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control" validatorMessage="Name is minimum 3 Chachter" required="true" value="#{personalInfoMB.pi.firstName}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Last Name</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control" validatorMessage="Name is minimum 3 Chachter" required="true" value="#{personalInfoMB.pi.lastName}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Father's Name</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control" validatorMessage="Name is minimum 3 Chachter" required="true" value="#{personalInfoMB.pi.fathersName}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Mother's Name</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control" validatorMessage="Name is minimum 3 Chachter" required="true" value="#{personalInfoMB.pi.mothersName}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Nationality</label>
+                                        <div class="col-md-6">
+                                            <h:selectOneMenu class="form-control from-control-modal combo" value="#{personalInfoMB.pi.nationality}">
+                                                <f:selectItem  itemLabel="Select one" itemValue="1" />
+                                                <f:selectItem  itemLabel="Bangladeshi" itemValue="2" />
+                                                <f:selectItem  itemLabel="Others" itemValue="3" />
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">National ID</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control" maxlength="17" validatorMessage="Please enter 17 digit NID" required="true" value="#{personalInfoMB.pi.nationId}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Date of Birth</label>
+                                        <div class="col-md-6">
+                                            <p:calendar placeholder="DD-MM-YYYY"  validatorMessage="Date of Birth Faomate DD-MM-YYYY" value="#{personalInfoMB.pi.dob}"/>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Religion</label>
+                                        <div class="col-md-6">
+                                            <h:selectOneMenu class="form-control from-control-modal combo" value="#{personalInfoMB.pi.religion}">
+                                                <f:selectItem  itemLabel="Select Religion" itemValue="1" />
+                                                <f:selectItem  itemLabel="Islam" itemValue="2" />
+                                                <f:selectItem  itemLabel="Hindu" itemValue="3" />
+                                                <f:selectItem  itemLabel="Christian" itemValue="4" />
+                                            </h:selectOneMenu>
+
+                                            <span class="required"></span> </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Gender</label>
+                                        <div class="col-md-6">
+                                            <h:selectOneRadio value="#{personalInfoMB.pi.gender}">
+                                                <f:selectItem itemLabel="Male" itemValue="Male" />
+                                                <f:selectItem itemLabel="Female" itemValue="Female" />
+                                            </h:selectOneRadio>
+                                            <span class="required"></span> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Marital Status</label>
+                                        <div class="col-md-6">
+                                            <h:selectOneRadio value="#{personalInfoMB.pi.maritalSt}">
+                                                <f:selectItem itemLabel="Married" itemValue="Married" />
+                                                <f:selectItem itemLabel="Unmarried" itemValue="Unmarried" />
+                                            </h:selectOneRadio>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Contact No</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control"  required="true" value="#{personalInfoMB.pi.contactNo}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Present Address</label>
+                                        <div class="col-md-6">
+                                            <h:inputTextarea class="form-control" required="true" value="#{personalInfoMB.pi.presentAdrs}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Permanent Address</label>
+                                        <div class="col-md-6">
+                                            <h:inputTextarea class="form-control" required="true" value="#{personalInfoMB.pi.prmntAdrs}"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Alternative Email</label>
+                                        <div class="col-md-6">
+                                            <h:inputText class="form-control" required="true" value="#{personalInfoMB.pi.email}"/>
+
+                                        </div>
+                                    </div>
+                                    <div>
+
+                                        <p:commandButton class="btn btn-default" update="msg" action="#{personalInfoMB.save()}" value="Submit"/>
+                                    </div>
+                                </h:form>
+                            </div>
+                            <div class="tab-pane" id="panel-729758">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <div class="panel">Add Your Education</div>
+                                        <h:form class="form-horizontal">
+                                            <p:messages id="msg"  closable="true" showDetail="false"/>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Exam Title</label>
+                                                <div class="col-md-4">
+                                                    <h:selectOneMenu class="form-control from-control-modal combo" value="#{educationMB.eduInfo.exTitle}">
+                                                        <f:selectItem  itemLabel="S.S.C" itemValue="1" />
+                                                        <f:selectItem  itemLabel="S.S.C Vocational" itemValue="2" />
+                                                        <f:selectItem  itemLabel="Dakhil" itemValue="3" />
+                                                        <f:selectItem  itemLabel="S.S.C Equivalent" itemValue="4" />
+                                                        <f:selectItem  itemLabel="H.S.C" itemValue="5" />
+                                                        <f:selectItem  itemLabel="Alim" itemValue="6" />
+                                                        <f:selectItem  itemLabel="Honours" itemValue="7" />
+                                                        <f:selectItem  itemLabel="Pass Course" itemValue="8" />
+                                                        <f:selectItem  itemLabel="Masters" itemValue="9" />
+
+                                                    </h:selectOneMenu>
+                                                    <span class="required"></span> </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Board/University</label>
+                                                <div class="col-md-4">
+
+                                                    <h:inputText class="form-control" value="#{educationMB.eduInfo.exBoard}"/>
+                                                    <span class="required"></span> </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Group/Subject</label>
+                                                <div class="col-md-4">
+                                                    <h:inputText class="form-control" required="true" value="#{educationMB.eduInfo.exGroup}"/> 
+                                                </div>
+                                                <span class="required"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Passing Year</label>
+                                                <div class="col-md-4">
+                                                    <h:selectOneMenu class="form-control from-control-modal combo" value="#{educationMB.eduInfo.exPassing}">
+                                                        <f:selectItem id="item1" itemLabel="2000" itemValue="1" />
+                                                        <f:selectItem id="item2" itemLabel="2001" itemValue="2" />
+                                                        <f:selectItem id="item3" itemLabel="2002" itemValue="3" />
+                                                        <f:selectItem id="item4" itemLabel="2003" itemValue="4" />
+                                                        <f:selectItem id="item5" itemLabel="2004" itemValue="5" />
+                                                        <f:selectItem id="item6" itemLabel="2005" itemValue="6" />
+                                                        <f:selectItem id="item7" itemLabel="2006" itemValue="7" />
+                                                        <f:selectItem id="item8" itemLabel="2007" itemValue="8" />
+                                                        <f:selectItem id="item9" itemLabel="2008" itemValue="9" />
+                                                        <f:selectItem id="item10" itemLabel="2009" itemValue="10" />
+                                                        <f:selectItem id="item11" itemLabel="2010" itemValue="11" />
+                                                        <f:selectItem id="item12" itemLabel="2011" itemValue="12" />
+                                                        <f:selectItem id="item13" itemLabel="2012" itemValue="13" />
+                                                        <f:selectItem id="item14" itemLabel="2013" itemValue="14" />
+                                                        <f:selectItem id="item15" itemLabel="2014" itemValue="15" />
+                                                        <f:selectItem id="item16" itemLabel="2015" itemValue="16" />
+                                                        <f:selectItem id="item17" itemLabel="2016" itemValue="17" />
+                                                    </h:selectOneMenu>
+                                                    <span class="required"></span> </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Result</label>
+                                                <div class="col-md-4">
+                                                    <h:selectOneMenu class="form-control from-control-modal combo" value="#{educationMB.eduInfo.exresult}">
+                                                        <f:selectItem  itemLabel="1st Class" itemValue="1" />
+                                                        <f:selectItem  itemLabel="2nd Class" itemValue="2" />
+                                                        <f:selectItem  itemLabel="3rd Class" itemValue="3" />
+                                                        <f:selectItem  itemLabel="GPA/CGPA in scale 4" itemValue="4" />
+                                                        <f:selectItem  itemLabel="GPA/CGPA in scale 5" itemValue="5" />
+                                                    </h:selectOneMenu>
+                                                    <span class="required"></span> </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Duration</label>
+                                                <div class="col-md-4">
+                                                    <h:selectOneMenu class="form-control from-control-modal combo" value="#{educationMB.eduInfo.exDuration}">
+                                                        <f:selectItem  itemLabel="01 Year" itemValue="1" />
+                                                        <f:selectItem  itemLabel="02 Years" itemValue="2" />
+                                                        <f:selectItem  itemLabel="03 Years" itemValue="3" />
+                                                        <f:selectItem  itemLabel="04 Years" itemValue="4" />
+                                                        <f:selectItem  itemLabel="05 Years" itemValue="5" />
+
+                                                    </h:selectOneMenu>
+                                                    <span class="required"></span> </div>
+                                            </div>
+                                            
+                                            <p:commandButton class="btn btn-default" action="#{educationMB.save()}" update="msg" value="Submit"/>
+                                           
+                                        </h:form>
+                                       
+
+                                        <h:form class="row">
+                                            <p:messages id="msg" showDetail="false" closable="true"/>
+                                            <div class="col-sm-6">
+                                                <div class="panel">Add Your Training-1</div>
+                                              
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Training Title </label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" value="#{trainingMB.training.trainingTitle}" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Topic Covered</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputTextarea class="form-control" value="#{trainingMB.training.topic}" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Institute</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" value="#{trainingMB.training.institute}" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Country</label>
+                                                        <div class="col-md-8">
+                                                            <h:selectOneMenu class="form-control from-control-modal combo">
+                                                                <f:selectItem  itemLabel="Bangladesh" itemValue="1" />
+                                                                <f:selectItem  itemLabel="Others" itemValue="2" />
+                                                            </h:selectOneMenu>
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Location</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputTextarea class="form-control" value="#{trainingMB.training.location}" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Training Year</label>
+                                                        <div class="col-md-8">
+                                                            <h:selectOneMenu class="form-control from-control-modal combo" value="#{trainingMB.training.trainingYear}">
+                                                                <f:selectItem id="item1" itemLabel="2000" itemValue="1" />
+                                                                <f:selectItem id="item2" itemLabel="2001" itemValue="2" />
+                                                                <f:selectItem id="item3" itemLabel="2002" itemValue="3" />
+                                                                <f:selectItem id="item4" itemLabel="2003" itemValue="4" />
+                                                                <f:selectItem id="item5" itemLabel="2004" itemValue="5" />
+                                                                <f:selectItem id="item6" itemLabel="2005" itemValue="6" />
+                                                                <f:selectItem id="item7" itemLabel="2006" itemValue="7" />
+                                                                <f:selectItem id="item8" itemLabel="2007" itemValue="8" />
+                                                                <f:selectItem id="item9" itemLabel="2008" itemValue="9" />
+                                                                <f:selectItem id="item10" itemLabel="2009" itemValue="10" />
+                                                                <f:selectItem id="item11" itemLabel="2010" itemValue="11" />
+                                                                <f:selectItem id="item12" itemLabel="2011" itemValue="12" />
+                                                                <f:selectItem id="item13" itemLabel="2012" itemValue="13" />
+                                                                <f:selectItem id="item14" itemLabel="2013" itemValue="14" />
+                                                                <f:selectItem id="item15" itemLabel="2014" itemValue="15" />
+                                                                <f:selectItem id="item16" itemLabel="2015" itemValue="16" />
+                                                                <f:selectItem id="item17" itemLabel="2016" itemValue="17" />
+                                                            </h:selectOneMenu>
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Duration</label>
+                                                        <div class="col-md-8">
+                                                            <h:selectOneMenu class="form-control from-control-modal combo" value="#{trainingMB.training.duration}">
+                                                                <f:selectItem  itemLabel="01 Year" itemValue="1" />
+                                                                <f:selectItem  itemLabel="02 Years" itemValue="2" />
+                                                                <f:selectItem  itemLabel="03 Years" itemValue="3" />
+                                                                <f:selectItem  itemLabel="04 Years" itemValue="4" />
+                                                                <f:selectItem  itemLabel="05 Years" itemValue="5" />
+
+                                                            </h:selectOneMenu>
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                            </div>
+                                            
+                                            <div class="col-sm-6">
+                                                <div class="panel">Add Your Training-2</div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Training Title </label>
+                                                    <div class="col-md-8">
+                                                        <h:inputText class="form-control" />
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Topic Covered</label>
+                                                    <div class="col-md-8">
+                                                        <h:inputTextarea class="form-control" />
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Institute</label>
+                                                    <div class="col-md-8">
+                                                        <h:inputText class="form-control" />
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Country</label>
+                                                    <div class="col-md-8">
+                                                        <h:selectOneMenu class="form-control from-control-modal combo">
+                                                            <f:selectItem  itemLabel="Bangladesh" itemValue="1" />
+                                                            <f:selectItem  itemLabel="Others" itemValue="2" />
+                                                        </h:selectOneMenu>
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Location</label>
+                                                    <div class="col-md-8">
+                                                        <h:inputTextarea class="form-control" />
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Training Year</label>
+                                                    <div class="col-md-8">
+                                                        <h:selectOneMenu class="form-control from-control-modal combo">
+                                                            <f:selectItem  itemLabel="2000" itemValue="1" />
+                                                            <f:selectItem  itemLabel="2001" itemValue="2" />
+                                                            <f:selectItem  itemLabel="2002" itemValue="3" />
+                                                            <f:selectItem  itemLabel="2003" itemValue="4" />
+                                                            <f:selectItem  itemLabel="2004" itemValue="5" />
+                                                            <f:selectItem itemLabel="2005" itemValue="6" />
+                                                            <f:selectItem  itemLabel="2006" itemValue="7" />
+                                                            <f:selectItem  itemLabel="2007" itemValue="8" />
+                                                            <f:selectItem  itemLabel="2008" itemValue="9" />
+                                                            <f:selectItem  itemLabel="2009" itemValue="10" />
+                                                            <f:selectItem  itemLabel="2010" itemValue="11" />
+                                                            <f:selectItem itemLabel="2011" itemValue="12" />
+                                                            <f:selectItem  itemLabel="2012" itemValue="13" />
+                                                            <f:selectItem  itemLabel="2013" itemValue="14" />
+                                                            <f:selectItem  itemLabel="2014" itemValue="15" />
+                                                            <f:selectItem  itemLabel="2015" itemValue="16" />
+                                                            <f:selectItem  itemLabel="2016" itemValue="17" />
+                                                        </h:selectOneMenu>
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Duration</label>
+                                                    <div class="col-md-8">
+                                                        <h:selectOneMenu class="form-control from-control-modal combo">
+                                                            <f:selectItem  itemLabel="01 Year" itemValue="1" />
+                                                            <f:selectItem  itemLabel="02 Years" itemValue="2" />
+                                                            <f:selectItem  itemLabel="03 Years" itemValue="3" />
+                                                            <f:selectItem  itemLabel="04 Years" itemValue="4" />
+                                                            <f:selectItem  itemLabel="05 Years" itemValue="5" />
+
+                                                        </h:selectOneMenu>
+                                                        <span class="required"></span> </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div>
+                                                <p:commandButton action="#{trainingMB.save()}" update="msg" class="btn btn-info" value="Update"/>
+                                            </div>
+                                            </h:form>
+                                        </div>
+                                       
+                                    </div>
+
+                                </div>
+                            
+
+                            <div class="tab-pane" id="panel-3">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <div class="panel">Add Your Experiences</div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h:form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Company Name</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" value=""/>
+                                                            <span class="required"></span> </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Position</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Company Location</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Department</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Responsibility</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputTextarea class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">From</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">To</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+
+                                                </h:form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="panel-4">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <h:form class="row">
+
+                                            <div class="col-sm-6">
+
+                                                <div class="form-horizontal">
+                                                    <div class="panel">Add Your Reference-1</div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Name</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Organization Name</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Designation</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Phone No</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Email</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Relation</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-horizontal">
+                                                    <div class="panel">Add Your Reference-2</div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Phone No</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Email</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Phone No</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Email</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Phone No</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">Relation</label>
+                                                        <div class="col-md-8">
+                                                            <h:inputText class="form-control" />
+                                                            <span class="required"></span> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+
+                                                <p:commandButton class="btn btn-info" value="Update"/>
+                                            </div>
+
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="panel-5">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <div class="panel">Add Your Photo</div>
+                                        <h:form>
+                                            <p:fileUpload/>
+                                            <div>
+
+                                                <p:commandButton class="btn btn-default" value="Submit"/>
+                                            </div>
+                                        </h:form>   
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </h:body>
+</html>
+

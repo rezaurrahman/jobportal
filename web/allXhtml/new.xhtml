@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <script src="resources/js/jquery.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="resources/css/new.css"/>
+        <h:outputStylesheet name="./css/bootstrap.min.css"/>
+        <h:outputStylesheet name="./css/new.css"/>
+        <h:outputStylesheet name="./css/style.css"/>
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+
+        <script>
+            $(function () {
+                $('#login-form-link').click(function (e) {
+                    $("#login-form").delay(100).fadeIn(100);
+                    $("#register-form").fadeOut(100);
+                    $('#register-form-link').removeClass('active');
+                    $(this).addClass('active');
+                    e.preventDefault();
+                });
+                $('#register-form-link').click(function (e) {
+                    $("#register-form").delay(100).fadeIn(100);
+                    $("#login-form").fadeOut(100);
+                    $('#login-form-link').removeClass('active');
+                    $(this).addClass('active');
+                    e.preventDefault();
+                });
+
+            });
+
+
+        </script>
+    </h:head>
+    <h:body class="body">
+         <div class="meta">																																																																																																																					<div class="inner_copy"><a href="http://ecommercebuilders.blogspot.com/2015/10/best-free-ecommerce-website-builders.html">http://ecommercebuilders.blogspot.com/2015/10/best-free-ecommerce-website-builders.html</a></div>
+            <div class="metalinks">
+                <a href="#"><p:graphicImage value="/resources/images/meta1.gif" alt="" width="15" height="14" /></a>
+                <a href="#"><p:graphicImage value="/resources/images/meta2.gif" alt="" width="17" height="14" /></a>
+                <a href="#"><p:graphicImage value="/resources/images/meta3.gif" alt="" width="17" height="14" /></a>
+                <a href="#"><p:graphicImage value="/resources/images/meta4.gif" alt="" width="15" height="14" /></a>
+            </div>
+            <p>Seekers: <a href="login.xhtml" target="_blank">Log in</a> or
+                <a href="companyLogin.xhtml">Employers</a></p>																																															
+        </div>
+
+        <div id="header">
+            <a href="index.html" class="logo"><p:graphicImage value="/resources/images/logo.jpg" alt="setalpm" width="149" height="28" /></a>                                                                                                                                                                                                                                      
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="companyRegistration.xhtml" target="_blank">Employer</a></li>
+                <li><a href="ourCareer.xhtml" target="_blank">Our Career</a></li>
+                <li><a href="aboutUs.xhtml" target="_blank">About Us</a></li>
+                <li><a href="aboutUs.xhtml" target="_blank">Help</a></li>
+                <li><a href="contactUs.xhtml" target="_blank">Contact Us</a></li>
+                <li class="last"><a href="new.xhtml">Register</a></li>
+            </ul>
+
+        </div>
+
+      <!--  <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Job Search</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="new.xhtml"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-search"></i> Search Job</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+                    <li><a href="new.xhtml"><i class="glyphicon glyphicon-user"></i> Create an account</a></li>
+                </ul>
+            </div>
+        </nav>-->
+
+        <div class="col-md-6"> 
+
+            <div class="desc">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="panel panel-jobseeker">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-6 tabs">
+                                    <a href="#" class="active" id="login-form-link"><div class="login">JOB SEEKER</div></a>
+                                </div>
+                                <div class="col-xs-6 tabs">
+                                    <a href="#" id="register-form-link"><div class="register">EMPLOYEE</div></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <h:form id="login-form" class="form-horizontal">
+                                <p:messages showDetail="false" id="msg" closable="true"/>
+                                <h2>Register as a job seeker</h2>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">First Name</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText class="form-control" requiredMessage="First Name is required" required="true" value="#{seekerRegiCtrl.jobseekerreg.jsFirstname}">
+                                            <f:validateLength minimum="3"/></h:inputText>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Last Name</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="Last Name is required" required="true" class="form-control" value="#{seekerRegiCtrl.jobseekerreg.jsLastName}"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Username</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="User Name is required" required="true" class="form-control" value="#{seekerRegiCtrl.jobseekerreg.jsUserName}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="Email is required" required="true" class="form-control" value="#{seekerRegiCtrl.jobseekerreg.jsEmail}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Password</label>
+                                    <div class="col-sm-9">
+                                        <h:inputSecret requiredMessage="Password is required" required="true" class="form-control" value="#{seekerRegiCtrl.jobseekerreg.jsPassword}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Confirm Password</label>
+                                    <div class="col-sm-9">
+                                        <h:inputSecret requiredMessage="Confirm Password not match." required="true" class="form-control" value="#{seekerRegiCtrl.jobseekerreg.jsConPass}"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9 col-sm-offset-3">
+
+                                    <p:commandButton action="#{seekerRegiCtrl.save()}" update="msg" class="btn btn-group-justified" value="Register" ajax="false"/>
+                                </div>
+                            </h:form>
+
+
+                            <h:form id="register-form" role="form" class="form-horizontal" style="display: none;">
+                                <h2>Register as a Employer</h2>
+                                <p:messages showDetail="false" id="msg" closable="true"/>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Company Name</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="Company Name is required" required="true" class="form-control" value="#{comRegiContr.companyreg.compName}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Username</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="Username is required" required="true" class="form-control" value="#{comRegiContr.companyreg.compUserName}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="Email is required" required="true" class="form-control" value="#{comRegiContr.companyreg.compEmail}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Company Phone</label>
+                                    <div class="col-sm-9">
+                                        <h:inputText requiredMessage="Company phone is required" required="true" class="form-control" value="#{comRegiContr.companyreg.compPhone}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Password</label>
+                                    <div class="col-sm-9">
+                                        <p:password requiredMessage="Password Name is required" required="true" class="form-control" value="#{comRegiContr.companyreg.compPassword}"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Confirm Password</label>
+                                    <div class="col-sm-9">
+                                        <p:password requiredMessage="Password not match" required="true" class="form-control" value="#{comRegiContr.companyreg.compPassword}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Company Type</label>
+                                    <div class="col-sm-9">
+                                        <select requiredMessage="Company type is required" required="true" value="#{comRegiContr.companyreg.compType}" class="form-control from-control-modal combo">
+                                            <option value="-1" selected="selected">Select one</option>
+
+                                            <option value="1">Private limited company</option>
+                                            <option value="2">Public limited company</option>
+                                            <option value="3">Holding companies and subsidiaries</option>
+                                            <option value="4">Partnership</option>
+                                            <option value="5">Information Technology (IT)</option>
+                                            <option value="6">Research and Development (RD)</option>
+                                            <option value="7">Real Estate</option>
+                                            <option value="8">Developers</option>
+                                        </select>
+                                        <span class="required"></span> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Company Address</label>
+                                    <div class="col-sm-9">
+                                        <h:inputTextarea class="form-control" requiredMessage="Company address is required" required="true" value="#{comRegiContr.companyreg.compAddress}"/>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Company Details</label>
+                                    <div class="col-sm-9">
+                                        <h:inputTextarea class="form-control" requiredMessage="Company details is required" required="true" value="#{comRegiContr.companyreg.compDetail}"/>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Company Contact</label>
+                                    <div class="col-sm-9">
+                                        <h:inputTextarea class="form-control" requiredMessage="Company contact is required" required="true" value="#{comRegiContr.companyreg.compCon}"/>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-9 col-sm-offset-3">
+
+                                    <p:commandButton update="msg" action="#{comRegiContr.save()}" class="btn btn-group-justified" value="Register"/>
+                                </div>
+
+                            </h:form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </h:body>
+
+
+</html>
+

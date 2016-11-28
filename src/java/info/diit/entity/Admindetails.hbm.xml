@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Admindetails" table="admindetails" catalog="jobfinal" optimistic-lock="version">
+        <id name="adminId" type="java.lang.Integer">
+            <column name="adminId" />
+            <generator class="identity" />
+        </id>
+        <property name="adminName" type="string">
+            <column name="adminName" length="55" not-null="true" />
+        </property>
+        <property name="adminPass" type="string">
+            <column name="adminPass" length="55" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

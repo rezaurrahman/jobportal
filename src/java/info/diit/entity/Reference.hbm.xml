@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Reference" table="reference" catalog="jobfinal" optimistic-lock="version">
+        <id name="refId" type="java.lang.Integer">
+            <column name="refID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobseekerreg" class="info.diit.entity.Jobseekerreg" fetch="select">
+            <column name="userId" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="orgName" type="string">
+            <column name="orgName" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" />
+        </property>
+        <property name="contactNo" type="string">
+            <column name="contactNo" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="relation" type="string">
+            <column name="relation" />
+        </property>
+        <property name="name2" type="string">
+            <column name="name2" />
+        </property>
+        <property name="orgName2" type="string">
+            <column name="orgName2" />
+        </property>
+        <property name="designation2" type="string">
+            <column name="designation2" />
+        </property>
+        <property name="contactNo2" type="string">
+            <column name="contactNo2" />
+        </property>
+        <property name="email2" type="string">
+            <column name="email2" />
+        </property>
+        <property name="relation2" type="string">
+            <column name="relation2" />
+        </property>
+    </class>
+</hibernate-mapping>

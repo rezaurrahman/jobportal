@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Jobseekerreg" table="jobseekerreg" catalog="jobfinal" optimistic-lock="version">
+        <id name="jsId" type="java.lang.Integer">
+            <column name="jsID" />
+            <generator class="identity" />
+        </id>
+        <property name="jsFirstname" type="string">
+            <column name="jsFirstname" length="55" />
+        </property>
+        <property name="jsLastName" type="string">
+            <column name="jsLastName" length="55" />
+        </property>
+        <property name="jsUserName" type="string">
+            <column name="jsUserName" length="55" />
+        </property>
+        <property name="jsEmail" type="string">
+            <column name="jsEmail" />
+        </property>
+        <property name="jsPassword" type="string">
+            <column name="jsPassword" length="55" />
+        </property>
+        <property name="jsConPass" type="string">
+            <column name="jsConPass" length="555" />
+        </property>
+        <set name="experiences" table="experience" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userId" />
+            </key>
+            <one-to-many class="info.diit.entity.Experience" />
+        </set>
+        <set name="seekerotherses" table="seekerothers" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userId" />
+            </key>
+            <one-to-many class="info.diit.entity.Seekerothers" />
+        </set>
+        <set name="references" table="reference" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userId" />
+            </key>
+            <one-to-many class="info.diit.entity.Reference" />
+        </set>
+        <set name="educations" table="education" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userId" />
+            </key>
+            <one-to-many class="info.diit.entity.Education" />
+        </set>
+        <set name="personalinfos" table="personalinfo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userId" />
+            </key>
+            <one-to-many class="info.diit.entity.Personalinfo" />
+        </set>
+        <set name="trainings" table="training" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userId" />
+            </key>
+            <one-to-many class="info.diit.entity.Training" />
+        </set>
+    </class>
+</hibernate-mapping>

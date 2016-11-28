@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto'
+              rel='stylesheet' type='text/css' />
+        <h:outputStylesheet name="./css/bootstrap.min.css"/>
+        <h:outputStylesheet name="./css/style.css"/>
+
+        <title>Job Portal</title>
+    </h:head>
+    <body>
+        <div class="meta">																																																																																																																					<div class="inner_copy"><a href="http://ecommercebuilders.blogspot.com/2015/10/best-free-ecommerce-website-builders.html">http://ecommercebuilders.blogspot.com/2015/10/best-free-ecommerce-website-builders.html</a></div>
+            <div class="metalinks">
+                <a href="#"><p:graphicImage value="/resources/images/meta1.gif" alt="" width="15" height="14" /></a>
+                <a href="#"><p:graphicImage value="/resources/images/meta2.gif" alt="" width="17" height="14" /></a>
+                <a href="#"><p:graphicImage value="/resources/images/meta3.gif" alt="" width="17" height="14" /></a>
+                <a href="#"><p:graphicImage value="/resources/images/meta4.gif" alt="" width="15" height="14" /></a>
+            </div>
+            <p>Seekers: <a href="login.xhtml" target="_blank">Log in</a> or
+                <a href="companyLogin.xhtml" target="_blank">Employers</a></p>																																															
+        </div>
+
+        <div id="header">
+            <a href="index.html" class="logo"><p:graphicImage value="/resources/images/logo.jpg" alt="setalpm" width="149" height="28" /></a>                                                                                                                                                                                                                                      
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="displayAllJobs.xhtml" target="_blank">All Jobs</a></li>
+                <li><a href="login.xhtml" target="_blank">My Career</a></li>
+                <li><a href="aboutUs.xhtml" target="_blank">About Us</a></li>
+                <li><a href="contactUs.xhtml" target="_blank">Help</a></li>
+                <li><a href="contactUs.xhtml" target="_blank">Contact Us</a></li>
+                <li class="last"><a href="new.xhtml">Register</a></li>
+            </ul>
+
+        </div>
+        <!--
+            <p:graphicImage value="/resources/images/flash.jpg" alt=""  style="width: 880px; height:380px; padding-left: 230px"/>
+        -->
+
+
+    <p:galleria id="simple" panelWidth="880" panelHeight="380" showFilmstrip="false" 
+                style="margin-left: 225px; margin-bottom: 15px">
+        <p:graphicImage value="/resources/images/flash.jpg" alt="" style="width: 880px; height:380px;"/>
+        <p:graphicImage value="/resources/images/esijb.jpg" alt="" style="width: 880px; height:380px;"/>
+        <p:graphicImage value="/resources/images/careerportal.jpg" alt="" style="width: 880px; height:380px;"/>
+    </p:galleria>
+
+    <div id="content">																																																																																																																																																																																																																													<div class="inner_copy"><a href="http://www.bestfreetemplates.info/builders.php">Original Source Link:Top 10 Free Website Builders</a></div>
+        <div class="search">
+            <form class="form-inline">
+                <div class="form-group">   
+                    <input type="text" class="form-control input-lg"  placeholder="Search by keyword"/>
+                </div>
+                <div class="form-group">
+                    <select class="form-control active input-lg">
+                        <option value="0" selected="">Organization Type</option>
+                        <option value="1">Government</option>
+                        <option value="2">Semi Government</option>
+                        <option value="3">NGO</option>
+                        <option value="4">Private Firm/Company</option>
+                        <option value="5">International Agencies</option>
+                        <option value="6">Others</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-info input-lg">Search</button>
+            </form>
+
+          <!--  <p:layout style="min-width:400px; min-height:300px; padding-bottom: 30px; 
+                      padding-top: 40px; margin-right: 65px;">
+
+
+                <p:layoutUnit position="center" class="cen">
+                    <h3> BROWSE CATEGORY</h3>
+                    <p:panelGrid columns="3" style="width: 300px; height: 120px">            
+                        <h:outputText value="Content" /> 
+                        <h:outputText value="Content" /> 
+                        <h:outputText value="Content" /> 
+
+                        <h:outputText value="Content" /> 
+                        <h:outputText value="Content" /> 
+                        <h:outputText value="Content" /> 
+
+                        <h:outputText value="Content" /> 
+                        <h:outputText value="Content" /> 
+                        <h:outputText value="Content" /> 
+                    </p:panelGrid>
+                </p:layoutUnit>
+            </p:layout>-->
+        </div>
+
+
+
+
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12"   style="background-color: #ccc">
+                    <div class="col-lg-3 col-md-6">
+                        <h3>Employers</h3>
+                        <ul>
+                            <li><a href="new.xhtml" >Create Account</a></li>
+                            <li><a href="#">Products/Service</a></li>
+                            <li><a href="companyLogin.xhtml" target="_blank">Post a Job</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3>Job Seekers</h3>
+                        <ul>
+
+                            <li><a href="new.xhtml">Create Account</a></li>
+                            <li><a href="#">Career Counseling</a></li>
+                            <li><a href="displayAllJobs.xhtml" target="_blank">My JobsBangla</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Video Guides</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="aboutUs.xhtml" target="_blank"> <i class="fa fa-info" aria-hidden="true"></i> About JobsBangla.com</a></li>
+                            <li><a href="aboutUs.xhtml"><i class="fa fa-file-text-o" aria-hidden="true"></i> Terms Conditions</a></li>
+                            <li><a href="#"> <i class="fa fa-users" aria-hidden="true"></i> International Partners </a></li>
+                            <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> Feedback</a></li>
+                            <li>
+                                <a href="contactUs.xhtml" target="_blank" title="Contact us!"><i class="fa fa-envelope"></i> Contact us</a> 
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h3>Social Media</h3>
+
+                        <ul>
+                            <li><a href="https://twitter.com/" target="_blank" title="Twitter">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-square-o fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x"></i>
+                                    </span> Twitter</a></li>
+                            <li><a href="https://www.facebook.com/"  target="_blank" title="GitHub">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-square-o fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x"></i>
+                                    </span> Facebook</a>
+                            </li>
+                            <!--
+                            <li><a href="https://www.instagram.com/accounts/login/"  target="_blank" title="GitHub">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-square-o fa-stack-2x"></i>
+                                        <i class="fa fa-instagram fa-stack-1x"></i>
+                                    </span> Instagram</a>
+                            </li>
+                            -->
+                            <li><a href="https://www.youtube.com/"  target="_blank" title="GitHub">
+                                     <span class="fa-stack fa-lg">
+                                         <i class="fa fa-square-o fa-stack-2x"></i>
+                                         <i class="fa fa-youtube fa-stack-1x"></i>
+                                     </span> Youtube</a>
+                             </li>
+                             <li><a href="https://www.google.com/"  target="_blank" title="GitHub">
+                                     <span class="fa-stack fa-lg">
+                                         <i class="fa fa-square-o fa-stack-2x"></i>
+                                         <i class="fa fa-google-plus fa-stack-1x"></i>
+                                     </span> Google+</a>
+                             </li>
+                            
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+    <div id="footer">																																																																																																																							<div class="inner_copy"><a href="https://www.engadget.com/2015/12/04/top-10-website-builders-for-small-business/">top 10 website builders for small business</a></div>
+        Copyright &copy;. All rights reserved. Design by Zihad, Shohag, Reza. 																																																						 
+    </div>
+
+</body>
+</html>

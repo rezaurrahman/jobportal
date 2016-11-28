@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Experience" table="experience" catalog="jobfinal" optimistic-lock="version">
+        <id name="expId" type="java.lang.Integer">
+            <column name="expId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobseekerreg" class="info.diit.entity.Jobseekerreg" fetch="select">
+            <column name="userId" />
+        </many-to-one>
+        <property name="companyName" type="string">
+            <column name="companyName" length="100" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="100" />
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="100" />
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="100" />
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" length="100" />
+        </property>
+        <property name="responsibilty" type="string">
+            <column name="responsibilty" length="100" />
+        </property>
+        <property name="from" type="string">
+            <column name="from" length="100" />
+        </property>
+        <property name="to" type="string">
+            <column name="to" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

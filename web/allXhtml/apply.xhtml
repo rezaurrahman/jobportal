@@ -1,0 +1,49 @@
+<composition xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:form>
+        <p:panel>
+           
+            <h:panelGrid columns="2" columnClasses="lebelColumn, fieldColumn">
+                <p:outputLabel value="Company Email address"/>
+                <p:inputText id="ct" value="#{emaildemo.company}" label="ct" required="true"/>
+               
+                <p:outputLabel value="Name"/>
+                <p:inputText id="ctc" value="#{emaildemo.ename}" label="ctc"/>
+                
+                <p:outputLabel value="email"/>
+                <p:inputText id="cd" value="#{emaildemo.mail}" label="cd"/>
+                
+                <p:outputLabel value="Cover letter"/>
+                <p:inputTextarea id="cl" value="#{emaildemo.message}" label="cl"/>
+                
+                 <p:outputLabel value="Upload your cv"/>
+                 
+                                            <p:panelGrid columns="2">
+                                                
+                                                <p:fileUpload value="#{sendAttachmentInEmail.file}" mode="simple" allowTypes="/(\.|\/)(gif|jpe?g|png|doc)$/"/> 
+
+                                                
+                                                    
+                                                
+                                            </p:panelGrid>
+                 
+                </h:panelGrid>
+        </p:panel>
+
+        <p:panel>
+            
+         <p:growl id="growl" life="2000" />
+     
+         <p:commandButton value="Mail" id="ajax" update="growl" action="#{emaildemo.email()}" ajax="false" styleClass="ui-priority-primary" />
+ 
+
+            
+        </p:panel>
+    </h:form>
+</composition>

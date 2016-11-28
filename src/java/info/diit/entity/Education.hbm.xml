@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Education" table="education" catalog="jobfinal" optimistic-lock="version">
+        <id name="exId" type="java.lang.Integer">
+            <column name="ExId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobseekerreg" class="info.diit.entity.Jobseekerreg" fetch="select">
+            <column name="userId" />
+        </many-to-one>
+        <property name="exTitle" type="string">
+            <column name="ExTitle" length="50" />
+        </property>
+        <property name="exGroup" type="string">
+            <column name="ExGroup" length="50" />
+        </property>
+        <property name="exBoard" type="string">
+            <column name="ExBoard" length="50" />
+        </property>
+        <property name="exPassing" type="string">
+            <column name="ExPassing" length="50" />
+        </property>
+        <property name="exresult" type="string">
+            <column name="EXResult" length="50" />
+        </property>
+        <property name="exDuration" type="string">
+            <column name="ExDuration" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

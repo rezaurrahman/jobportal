@@ -1,0 +1,56 @@
+
+h2 {
+    margin-left: 250px;
+    
+    padding-bottom: 20px;
+    
+}
+body {
+  
+  background:#F7F7F7;
+  color:#666666;
+  font-family: 'Roboto', sans-serif;
+  font-weight:100;
+}
+.btn-block{
+    margin-left: 150px;
+}
+
+.body{
+    background: #E3E4E6;
+}
+
+.panel-jobseeker .panel-heading .tabs{
+  padding: 0;
+}
+
+
+.panel-jobseeker .panel-heading {
+  color: #848c9d;
+  background-color: #e8e9ec;
+  border-color: #fff;
+  text-align:center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom: 0px;
+  padding: 0px 15px;
+}
+
+.panel-jobseeker .panel-heading .login {
+  padding: 20px 30px;
+  border-bottom-leftt-radius: 5px;
+}
+.panel-jobseeker .panel-heading .register {
+  padding: 20px 30px;
+  background: #F0F0F0;
+  border-bottom-right-radius: 5px;
+}
+.panel-jobseeker .panel-heading .register:hover {
+    background: #9BC0D4;
+  }
+  .panel-jobseeker .panel-heading .login:hover {
+    background: #9BC0D4;
+  }
+

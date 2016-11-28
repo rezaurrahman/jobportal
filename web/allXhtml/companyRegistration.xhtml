@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <style type="text/css">
+            .fom{
+                margin-left: 250px;
+                margin-right: 200px;
+                width: 750px;
+                height: 600px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto'
+              rel='stylesheet' type='text/css' />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- <h:outputStylesheet name="./css/default.css"/>-->
+        <h:outputStylesheet name="./css/style.css"/>
+
+        <title>Company Registration</title>
+    </h:head>
+
+    <body>
+    <h:form>
+
+        <div id="header">
+            <a href="index.html" class="logo"><p:graphicImage value="/resources/images/logo.jpg" alt="setalpm" width="149" height="28" /></a>                                                                                                                                                                                                                                      
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="#">Employer</a></li>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="last"><a href="jobPost.xhtml">Job Post</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <p:panel header="Employers Redistration Here" class="fom">
+        <p:panel>
+            
+            <h:panelGrid columns="2" columnClasses="lebelColumn, fieldColumn">
+                <p:outputLabel value="Company Name" style="font-weight:bold"/>
+                <p:inputText id="cn" value="#{comRegiContr.companyreg.compName}" label="cn" required="true"
+                             style="width: 300px; height: 20px; font-size: medium;"/>
+               
+                <p:outputLabel value="User Name" style="font-weight:bold"/>
+                <p:inputText id="un" value="#{comRegiContr.companyreg.compUserName}" label="un"
+                             style="width: 300px; height: 20px; font-size: medium;"/>
+                
+                <p:outputLabel value="Company Phone" style="font-weight:bold"/>
+                <p:inputText id="cp" value="#{comRegiContr.companyreg.compPhone}" label="cp"
+                             style="width: 300px; height: 20px; font-size: medium;"/>
+                
+                <h:outputLabel for="email" value="Email :" style="font-weight:bold"/>
+                <p:inputText id="email" value="#{comRegiContr.companyreg.compEmail}" 
+                             style="width: 300px; height: 20px; font-size: medium;"/>
+                <p:message for="email" display="tooltip" />
+                <h:outputText value="#{comRegiContr.companyreg.compEmail}" />
+                
+                <h:outputLabel for="pwd1" value="Password: *" style="font-weight:bold"/>
+                <p:password id="pwd1" value="#{comRegiContr.companyreg.compPassword}" match="pwd2" 
+                            label="Password" required="true" style="width: 300px; height: 20px; font-size: medium;"/>
+
+                <h:outputLabel for="pwd2" value="Confirm Password: *" style="font-weight:bold"/>
+                <p:password id="pwd2" value="#{comRegiContr.companyreg.compPassword}" label="Confirm Password" 
+                            required="true" style="width: 300px; height: 20px; font-size: medium;"/>
+                
+                <p:outputLabel value="Company Type" style="font-weight:bold"/>
+                <p:selectOneMenu id="accNo" value="#{comRegiContr.companyreg.compType}" effect="fold" editable="true"
+                                 style="width: 300px; height: 25px;">
+                        <f:selectItem itemLabel="Select One" itemValue="" />
+                        <f:selectItems value="#{jobCatCon.comType}" />
+                    </p:selectOneMenu>
+              
+                
+                <p:outputLabel value="Company Address" style="font-weight:bold"/>
+                <h:inputTextarea id="ca" value="#{comRegiContr.companyreg.compAddress}" label="ca"
+                             style="width: 300px; height: 50px; font-size: medium;"/>
+                
+                <p:outputLabel value="Company Details" style="font-weight:bold"/>
+                <h:inputTextarea id="code" value="#{comRegiContr.companyreg.compDetail}" label="code"
+                             style="width: 300px; height: 50px; font-size: medium;"/>
+                
+                <p:outputLabel value="Company Contact" style="font-weight:bold"/>
+                <h:inputTextarea id="cc" value="#{comRegiContr.companyreg.compCon}" label="cc"
+                             style="width: 300px; height: 50px; font-size: medium;"/>
+          
+                
+                </h:panelGrid>
+        </p:panel>
+
+        <p:panel>
+          
+                <p:growl id="growl" life="2000" />
+     
+                <p:commandButton value="Save" id="ajax" update="growl" action="#{comRegiContr.save()}" ajax="false" styleClass="ui-priority-primary" />
+ 
+
+            
+        </p:panel>
+            </p:panel>
+    </h:form>
+
+</body>
+</html>

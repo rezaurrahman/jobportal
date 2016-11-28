@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="./mastertamplate.xhtml">
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <p:dataTable var="car" value="#{seekerRegiCtrl.findAll}" style="width: 1000px">
+                    <p:column headerText="User Id">
+                        <h:outputText value="#{car.jsId}" />
+                    </p:column>
+
+                    <p:column headerText="First Name">
+                        <h:outputText value="#{car.jsFirstname}" />
+                    </p:column>
+
+
+                    <p:column headerText="Last Name">
+                        <h:outputText value="#{car.jsLastName}" />
+                    </p:column>
+                    
+                    
+                    <p:column headerText="Email">
+                        <h:outputText value="#{car.jsEmail}" />
+                    </p:column>
+                    
+                    
+                    <p:column headerText="User Name">
+                        <h:outputText value="#{car.jsUserName}" />
+                    </p:column>
+                    
+                    
+                    <p:column headerText="Experience">
+                        <h:outputText value="#{car.experiences}" />
+                    </p:column>
+                    
+                    <p:column headerText="Education">
+                        <h:outputText value="#{car.educations}" />
+                    </p:column>
+                </p:dataTable>
+                <f:facet name="footer">
+                    
+                    <h:commandButton value="Delete" action="#{postJobCon.delete}"/>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>

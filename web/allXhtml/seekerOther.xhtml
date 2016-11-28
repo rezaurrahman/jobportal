@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<composition xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:form>
+        <p:panel>
+            
+            <h:panelGrid columns="2" columnClasses="lebelColumn, fieldColumn">
+                <p:outputLabel value="Prefer Area"/>
+                <p:inputText id="pa" value="#{seekerOtherCon.seekerothers.preferArea}" label="pa" required="true"/>
+               
+                <p:outputLabel value="Present Salary"/>
+                <p:inputText id="ps" value="#{seekerOtherCon.seekerothers.prSalary}" label="ps"/>
+                
+                <p:outputLabel value="Expected Salary"/>
+                <p:inputText id="es" value="#{seekerOtherCon.seekerothers.exSalary}" label="es"/>
+                
+                </h:panelGrid>
+        </p:panel>
+
+        <p:panel>
+           
+                
+                
+                <p:growl id="growl" life="2000" />
+     
+                <p:commandButton value="Save" id="ajax" update="growl" action="#{seekerOtherCon.save()}" ajax="false" styleClass="ui-priority-primary" />
+ 
+
+            
+        </p:panel>
+    </h:form>
+</composition>
+

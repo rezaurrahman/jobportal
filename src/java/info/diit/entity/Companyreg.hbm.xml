@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Companyreg" table="companyreg" catalog="jobfinal" optimistic-lock="version">
+        <id name="compId" type="java.lang.Integer">
+            <column name="compId" />
+            <generator class="identity" />
+        </id>
+        <property name="compName" type="string">
+            <column name="compName" />
+        </property>
+        <property name="compUserName" type="string">
+            <column name="compUserName" />
+        </property>
+        <property name="compPhone" type="string">
+            <column name="compPhone" length="15" />
+        </property>
+        <property name="compEmail" type="string">
+            <column name="compEmail" />
+        </property>
+        <property name="compPassword" type="string">
+            <column name="compPassword" />
+        </property>
+        <property name="compType" type="string">
+            <column name="compType" />
+        </property>
+        <property name="compAddress" type="string">
+            <column name="compAddress" />
+        </property>
+        <property name="compDetail" type="string">
+            <column name="compDetail" />
+        </property>
+        <property name="compCon" type="string">
+            <column name="compCon" />
+        </property>
+    </class>
+</hibernate-mapping>

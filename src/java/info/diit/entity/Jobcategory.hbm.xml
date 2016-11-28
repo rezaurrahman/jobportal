@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Jobcategory" table="jobcategory" catalog="jobfinal" optimistic-lock="version">
+        <id name="category" type="string">
+            <column name="category" />
+            <generator class="assigned" />
+        </id>
+        <property name="id" type="java.lang.Integer">
+            <column name="id" />
+        </property>
+        <set name="jobposts" table="jobpost" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="jobCat" />
+            </key>
+            <one-to-many class="info.diit.entity.Jobpost" />
+        </set>
+    </class>
+</hibernate-mapping>

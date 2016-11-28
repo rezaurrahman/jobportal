@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="jobfinal"/>
+  <table-filter match-name="admindetails"/>
+  <table-filter match-name="personalinfo"/>
+  <table-filter match-name="reference"/>
+  <table-filter match-name="companycategory"/>
+  <table-filter match-name="jobpost"/>
+  <table-filter match-name="jobseekerreg"/>
+  <table-filter match-name="role"/>
+  <table-filter match-name="upload_image"/>
+  <table-filter match-name="companyreg"/>
+  <table-filter match-name="seekerothers"/>
+  <table-filter match-name="experience"/>
+  <table-filter match-name="userroles"/>
+  <table-filter match-name="education"/>
+  <table-filter match-name="training"/>
+  <table-filter match-name="jobcategory"/>
+</hibernate-reverse-engineering>

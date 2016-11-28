@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+     <h:outputStylesheet name="./css/bootstrap.min.css"/>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <h:head>
+        <style type="text/css">
+            .fom{
+                margin-left: 250px;
+                margin-right: 200px;
+                width: 750px;
+                height: 600px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto'
+              rel='stylesheet' type='text/css' />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- <h:outputStylesheet name="./css/default.css"/>-->
+        <h:outputStylesheet name="./css/style.css"/>
+
+        
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+            
+           <div id="header">
+            <a href="index.html" class="logo"><p:graphicImage value="/resources/images/logo.jpg" alt="setalpm" width="149" height="28" /></a>                                                                                                                                                                                                                                      
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="displayAllJobs.xhtml" target="_blank">All Jobs</a></li>
+                <li><a href="login.xhtml" target="_blank">My Career</a></li>
+                <li><a href="aboutUs.xhtml" target="_blank">About Us</a></li>
+                <li><a href="contactUs.xhtml" target="_blank">Help</a></li>
+                <li><a href="contactUs.xhtml" target="_blank">Contact Us</a></li>
+                <li class="last"><a href="new.xhtml">Register</a></li>
+                <h:form>
+                 <li><p:commandLink action="#{loginBean.logout()}"><i class="glyphicon glyphicon-off"/> Logout</p:commandLink></li>
+                 </h:form>
+            </ul>
+            
+        </div>
+        <div class="row" style="margin-left: 50px">
+          
+ 
+            <h2 class="text-center">Post a job</h2>
+            <h:form  class="form-horizontal">
+                <p:growl id="msg" showDetail="false"/>
+                <div class="col-sm-6">
+
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Job Title </label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Training Title is required" class="form-control" value="#{jobPostCtrl.jobpost.jobTitle}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Job Requirement</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Topic is required" class="form-control" value="#{jobPostCtrl.jobpost.jobRequ}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">No of Post</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.noOfPost}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Job Post Date</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.poatDate}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Deadline</label>
+                        <div class="col-md-7">
+                            
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.deadline}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Job Nature</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.jobNature}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Job Description</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.jobDesc}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Working Place</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.workingPlace}" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Salary</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.salary}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Required Experience</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.requireExperience}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"> Required Education </label>
+                        <div class="col-md-7">
+                            <h:inputText class="form-control" value="#{jobPostCtrl.jobpost.educationReqr}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Working Hours</label>
+                        <div class="col-md-7">
+                            <h:inputText class="form-control" value="#{jobPostCtrl.jobpost.workingHours}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Address</label>
+                        <div class="col-md-7">
+                            <h:inputText class="form-control" value="#{jobPostCtrl.jobpost.address}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Email</label>
+                        <div class="col-md-7">
+                            <h:inputText class="form-control" value="#{jobPostCtrl.jobpost.email}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Employer Name</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.employerName}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Job Category</label>
+                        <div class="col-md-7">
+                            <h:inputText required="true" requiredMessage="Location is required" class="form-control" value="#{jobPostCtrl.jobpost.jobcategory}" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-6 right">
+                    <p:commandButton action="#{jobPostCtrl.save()}" update="msg" class="btn btn-info" value="Submit"/>
+                    
+                </div>
+            </h:form>
+        </div>
+
+
+       
+    </h:body>
+</html>
+

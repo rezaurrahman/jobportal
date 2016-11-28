@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top"><h2>Job Portal</h2></ui:insert>
+            
+            <p:commandLink action="#{loginBean.logout()}"><h3 align="right" style="margin-right: 50px"> Logout</h3></p:commandLink>
+               
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">
+                 <p:menu>
+                        <p:submenu label="Menu">
+                            <p:menuitem value="Display Job" url="displayJob.xhtml" />
+                            <p:menuitem value="Display User" url="displayUser.xhtml" />
+                            <p:menuitem value="page3" url="page3.xhtml" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </ui:insert>
+            </div>
+            <div>
+
+                <div id="content" class="right_content">
+                    <ui:insert name="content">Welcome to Admin</ui:insert>
+                </div>
+            </div>
+        </div>
+      
+
+    </h:body>
+
+</html>

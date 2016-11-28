@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2016 1:41:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="info.diit.entity.Personalinfo" table="personalinfo" catalog="jobfinal" optimistic-lock="version">
+        <id name="seekerId" type="java.lang.Integer">
+            <column name="seekerId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jobseekerreg" class="info.diit.entity.Jobseekerreg" fetch="select">
+            <column name="userId" />
+        </many-to-one>
+        <property name="firstName" type="string">
+            <column name="firstName" length="55" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" length="55" />
+        </property>
+        <property name="fathersName" type="string">
+            <column name="fathersName" length="45" />
+        </property>
+        <property name="mothersName" type="string">
+            <column name="mothersName" length="45" />
+        </property>
+        <property name="dob" type="string">
+            <column name="dob" length="0" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="11" />
+        </property>
+        <property name="maritalSt" type="string">
+            <column name="maritalSt" length="11" />
+        </property>
+        <property name="religion" type="string">
+            <column name="religion" length="45" />
+        </property>
+        <property name="presentAdrs" type="string">
+            <column name="presentAdrs" />
+        </property>
+        <property name="prmntAdrs" type="string">
+            <column name="prmntAdrs" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="contactNo" type="string">
+            <column name="contactNo" length="55" />
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="55" />
+        </property>
+        <property name="nationId" type="java.lang.Integer">
+            <column name="nationId" />
+        </property>
+    </class>
+</hibernate-mapping>

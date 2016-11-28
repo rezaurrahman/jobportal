@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="./mastertamplate.xhtml">
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid>
+                <p:dataTable var="car" value="#{postJobCon.findAll}" style="width: 1000px">
+                    <p:column headerText="Job Id">
+                        <h:outputText value="#{car.jobId}" />
+                    </p:column>
+
+                    <p:column headerText="Year">
+                        <h:outputText value="#{car.employerName}" />
+                    </p:column>
+
+                    <p:column headerText="Email">
+                        <h:outputText value="#{car.email}" />
+                    </p:column>
+
+                    <p:column headerText="Job Category">
+                        <h:outputText value="#{car.jobcategory}" />
+                    </p:column>
+                    
+                    <p:column headerText="Dedline">
+                        <h:outputText value="#{car.deadline}" />
+                    </p:column>
+
+                    <p:column headerText="Expire Date">
+                        <h:outputText value="#{car.expDate}" />
+                    </p:column>
+
+                    <p:column headerText="No Of Post">
+                        <h:outputText value="#{car.noOfPost}" />
+                    </p:column>
+
+                    <p:column headerText="Education Requirement">
+                        <h:outputText value="#{car.educationReqr}" />
+                    </p:column>
+                    
+                    <p:column headerText="Experience">
+                        <h:outputText value="#{car.requireExperience}" />
+                    </p:column>
+
+                    <p:column headerText="Salary">
+                        <h:outputText value="#{car.salary}" />
+                    </p:column>
+                </p:dataTable>
+                <f:facet name="footer">
+                    
+                    <h:commandButton value="Delete" action="#{postJobCon.delete}"/>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
